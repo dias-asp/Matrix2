@@ -77,14 +77,14 @@ type SubKey = 'gamma' | 'category' | 'hairType' | 'styling';
 
       <div class="social-icons">
         <a href="https://wa.me/77058881285" target="_blank">
-          <img src="/images/whatsapp-icon.svg" alt="WhatsApp" class="whatsapp-menu-icon" />
+          <img src="images/whatsapp-icon.svg" alt="WhatsApp" class="whatsapp-menu-icon" />
         </a>
         <a
           href="https://www.instagram.com/tstafievskaya?igsh=eTR4eXVxZGp1Ymh0&utm_source=qr"
           class="social-icon instagram"
           target="_blank"
         >
-          <img src="/images/instagram-icon.svg" alt="Instagram" />
+          <img src="images/instagram-icon.svg" alt="Instagram" />
         </a>
       </div>
     </div>
