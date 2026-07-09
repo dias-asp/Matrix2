@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+# Автодеплой: на каждый push в main собирает Angular и публикует в ветку gh-pages,
+# откуда GitHub Pages раздаёт сайт на https://dias-asp.github.io/Matrix2/.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: |
+          npx ng build --base-href /Matrix2/
+          cp dist/matrix2/browser/index.html dist/matrix2/browser/404.html
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/matrix2/browser
+          # На проектном URL кастомный домен не задаём (CNAME не публикуем).
