@@ -1,59 +1,52 @@
-# Matrix2
+# Matrix2 — сайт студии Татьяны Стафиевской (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.32.
+Переписанная на Angular 20 версия сайта колориста Matrix. Дизайн полностью
+повторяет оригинал (статическая версия в `../Matrix1`). Каталог продукции и прайс
+вынесены в типизированную модель данных для лёгкого расширения.
 
-## Development server
+## Требования
 
-To start a local development server, run:
+- Node.js 20.19+ (проект закреплён на Angular 20, т.к. Angular 22 требует Node 22+).
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Разработка
 
 ```bash
-ng generate component component-name
+npm install
+npm start           # ng serve → http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Сборка
 
 ```bash
-ng generate --help
+npm run build           # обычная production-сборка → dist/matrix2/browser/
+npm run build:ghpages   # то же + создаёт 404.html (SPA-фолбэк для дип-линков)
 ```
 
-## Building
+## Архитектура
 
-To build the project run:
+- **Роутинг** (`src/app/app.routes.ts`): `/` — главная, `/price` — прайс,
+  `/catalog` — каталог. Фильтры каталога передаются query-параметрами:
+  `?gamma=`, `?category=`, `?hairType=`.
+- **Данные** (`src/app/data/`): `products.data.ts`, `services.data.ts`,
+  `gallery.data.ts`. Гамма у каждой линейки задаётся явно; тип продукта и типы
+  волос вычисляются в `derive.ts` (порт логики оригинального `script.js`) при
+  загрузке и хранятся как типизированные поля. Скрытые (закомментированные в
+  оригинале) линейки и товары помечены `hidden: true`.
+- **Обвязка** (шапка, баннеры, хлебные крошки, лого) вынесена в корневой `App`
+  и вычисляется из URL через `LayoutService`, повторяя переключения оригинала.
+- **Стили**: `src/styles.css` — дословная копия оригинального CSS.
+- **Ассеты**: `public/` — изображения с транслитерированными путями
+  (`products/`, `works/`), `CNAME`, иконки.
 
-```bash
-ng build
-```
+## Деплой на GitHub Pages
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Сайт статический, кастомный домен задаётся файлом `public/CNAME`
+(`stafievskayastudio.com`), который копируется в сборку.
 
-## Running unit tests
+1. `npm run build:ghpages`
+2. Опубликовать содержимое `dist/matrix2/browser/` в ветку GitHub Pages
+   (например, через `angular-cli-ghpages` или вручную в `gh-pages`).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+`base-href` по умолчанию `/` — верно для кастомного домена в корне.
+`404.html` (копия `index.html`) обеспечивает работу дип-линков `/price` и
+`/catalog` при обновлении страницы.

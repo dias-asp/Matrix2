@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ghpages": "ng build && cp dist/matrix2/browser/index.html dist/matrix2/browser/404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
