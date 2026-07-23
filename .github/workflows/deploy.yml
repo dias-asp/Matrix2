@@ -1,7 +1,7 @@
 name: Deploy to GitHub Pages
 
 # Автодеплой: на каждый push в main собирает Angular и публикует в ветку gh-pages,
-# откуда GitHub Pages раздаёт сайт на https://dias-asp.github.io/Matrix2/.
+# откуда GitHub Pages раздаёт сайт на кастомном домене stafievskayastudio.com (из корня).
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build
         run: |
-          npx ng build --base-href /Matrix2/
+          npx ng build --base-href /
           cp dist/matrix2/browser/index.html dist/matrix2/browser/404.html
 
       - name: Publish to gh-pages
@@ -40,4 +40,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/matrix2/browser
-          # На проектном URL кастомный домен не задаём (CNAME не публикуем).
+          # public/CNAME (stafievskayastudio.com) попадает в сборку и публикуется — кастомный домен.
