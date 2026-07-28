@@ -196,7 +196,7 @@ const RAW_LINES: RawLine[] = [
       { image: 'products/instacure-bond/cond1000.jpg', title: 'Кондиционер Instacure Build-a-Bond', description: 'Питает и восстанавливает поврежденные связи в волосах', volume: '1000 мл', price: '14 900 ₸' },
       { image: 'products/instacure-bond/mask.jpg', title: 'Маска Instacure Build-a-Bond', description: 'Интенсивно восстанавливает и укрепляет структуру волос', volume: '250 мл', price: '7 500 ₸' },
       { image: 'products/instacure-bond/balm.jpg', title: 'Бонд-бальзам Instacure Build-a-Bond', description: 'Восстанавливает поврежденные связи и защищает структуру волос', volume: '75 мл', price: '10 100 ₸' },
-      { image: 'products/instacure-bond/oil.jpg', title: 'Укрепляющее масло Instacure Build-a-Bond', description: 'Укрепляет и восстанавливает сильно поврежденные волосы', volume: '50 мл', price: '8 000 ₸'},
+      { image: 'products/instacure-bond/oil.jpg', title: 'Укрепляющее масло Instacure Build-a-Bond', description: 'Укрепляет и восстанавливает сильно поврежденные волосы', volume: '50 мл', price: '9 500 ₸'},
     ],
   },
   {
