@@ -72,7 +72,7 @@ const RAW_LINES: RawLine[] = [
       { image: 'products/glow-mania/cond300.jpg', title: 'Кондиционер Glow Mania', description: 'Питает и придает блеск тусклым волосам', volume: '300 мл', price: '6800 ₸' },
       { image: 'products/glow-mania/sham1000.jpg', title: 'Шампунь Glow Mania', description: 'очищает и придает блеск волосам', volume: '1000 мл', price: '12 300 ₸' },
       { image: 'products/glow-mania/cond1000.jpg', title: 'Кондиционер Glow Mania', description: 'Питает и придает блеск волосам', volume: '1000 мл', price: '13 600 ₸' },
-      { image: 'products/glow-mania/mask.jpg', title: 'Маска Glow Mania', volume: '200 мл', price: '12 900 ₸' },
+      { image: 'products/glow-mania/mask.jpg', title: 'Маска Glow Mania', volume: '500 мл', price: '12 900 ₸' },
       { image: 'products/glow-mania/spray.jpg', title: 'Спрей Glow Mania', description: 'Мгновенно придает блеск и сияние', volume: '150 мл', price: '9 200 ₸' },
     ],
   },
