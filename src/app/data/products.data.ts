@@ -282,9 +282,9 @@ const RAW_LINES: RawLine[] = [
       'Средства гаммы Vavoom Matrix обладают хорошей фиксацией и помогают создавать прически любой сложности: пышные укладки, стильные начесы, романтичные локоны. Даже на тонких волосах позволяют добиться стойкого объема и ощущения воздушности.',
     lineImage: 'products/main of line/main vavoom.jpg',
     products: [
-      { image: 'products/vavoom/elastic.jpg', title: 'Лак-спрей Vavoom Freezing Spray', description: 'Лак экстра сильной фиксации', volume: '400 мл', price: '7 000 ₸' },
-      { image: 'products/vavoom/strong.jpg', title: 'Лак-спрей Vavoom Freezing Spray', description: 'Лак сильной фиксации', volume: '400 мл', price: '7 000 ₸' },
-      { image: 'products/vavoom/triple.jpg', title: 'Лак-спрей Vavoom Triple Freeze', description: 'Лак подвижной фиксации', volume: '400 мл', price: '7 000 ₸' },
+      { image: 'products/vavoom/elastic.jpg', title: 'Freezing Spray Extra Full', description: 'Лак экстра сильной фиксации', volume: '500 мл', price: '7 000 ₸' },
+      { image: 'products/vavoom/strong.jpg', title: 'Freezing Spray Extra Hold', description: 'Лак сильной фиксации', volume: '500 мл', price: '7 000 ₸' },
+      { image: 'products/vavoom/triple.jpg', title: 'Triple Freeze Extra Dry', description: 'Лак подвижной фиксации', volume: '300 мл', price: '7 000 ₸' },
     ],
   },
   {
